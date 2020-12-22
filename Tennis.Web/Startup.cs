@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Tennis.DAL;
 
 namespace Tennis.Web
 {
@@ -26,6 +28,8 @@ namespace Tennis.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            string migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+            services.AddContext(Configuration.GetConnectionString("conection"), migrationsAssembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

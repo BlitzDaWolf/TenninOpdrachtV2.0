@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Tennis.DAL.Configuration;
 using Tennis.DAL.Models;
 using Tennis.DAL.Models.Inteface;
 
@@ -38,10 +36,23 @@ namespace Tennis.DAL.Context
             }
             return base.SaveChanges();
         }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new GenderConfiguration());
+            modelBuilder.ApplyConfiguration(new FineConfiguration());
+            modelBuilder.ApplyConfiguration(new GameConfiguration());
+            modelBuilder.ApplyConfiguration(new GameResultConfiguration());
+            modelBuilder.ApplyConfiguration(new LeagueConfiguration());
+            modelBuilder.ApplyConfiguration(new MemberConfiguration());
+            modelBuilder.ApplyConfiguration(new MemberRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
