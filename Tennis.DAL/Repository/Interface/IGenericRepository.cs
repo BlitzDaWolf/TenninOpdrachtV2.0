@@ -10,5 +10,6 @@ namespace Tennis.DAL.Repository.Interface
         public void Create(object create);
         public void Update(object update);
         public TReturn GetById(object id);
+        public void Delete(object id);
     }
 }

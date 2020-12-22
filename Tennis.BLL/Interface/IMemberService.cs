@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using static AutoMapper.Internal.ExpressionFactory;
+﻿using Tennis.DAL.Models;
+using Tennis.DTO.Create;
+using Tennis.DTO.Read;
+using Tennis.DTO.Update;
 
 namespace Tennis.BLL.Interface
 {
-    public interface IMemberService : IGenericService<Member, int>
+    public interface IMemberService : IGenericService<Member, int, MemberReadDTO, MemberCreateDTO, MemberUpdateDTO>
     {
     }
 }

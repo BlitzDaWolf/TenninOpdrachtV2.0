@@ -57,5 +57,10 @@ namespace Tennis.DAL.Repository
             var res = dbSet.Find(id);
             return (TReturn)mapper.Map(res, typeof(TBase), readType);
         }
+
+        public void Delete(object id)
+        {
+            dbSet.Remove(dbSet.Find(id));
+        }
     }
 }

@@ -1,33 +1,28 @@
 ﻿using System.Collections.Generic;
 using Tennis.BLL.Interface;
+using Tennis.DTO.Read;
 
 namespace Tennis.BLL.Service
 {
     public class RoleService : IRoleService
     {
-        public void Create(object create)
+        public RoleService(UnitOfWork unitOfWork)
         {
-
+            UnitOfWork = unitOfWork;
         }
 
-        public void Delete(object id)
-        {
+        public UnitOfWork UnitOfWork { get; set; }
 
+        public void Delete(int id) { }
+
+        public List<RoleReadDTO> GetAll()
+        {
+            return UnitOfWork.RoleRepository.GetAll();
         }
 
-        public IEnumerator<object> GetAll()
+        public RoleReadDTO GetById(int id)
         {
-            return null;
-        }
-
-        public object GetById(object id)
-        {
-            return null;
-        }
-
-        public void Update(object update)
-        {
-
+            return UnitOfWork.RoleRepository.GetById(id);
         }
     }
 }
