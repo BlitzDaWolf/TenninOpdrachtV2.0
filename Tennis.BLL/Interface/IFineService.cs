@@ -6,8 +6,7 @@ using Tennis.DTO.Read;
 
 namespace Tennis.BLL.Interface
 {
-    public interface IRoleService : IGenericService<Role, int, RoleReadDTO>
+    public interface IFineService : IGenericService<Fine, int, FineReadDTO>
     {
-
     }
 }
