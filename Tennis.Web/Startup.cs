@@ -30,6 +30,7 @@ namespace Tennis.Web
             services.AddControllers();
             string migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddContext(Configuration.GetConnectionString("conection"), migrationsAssembly);
+            services.AddMapping();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
