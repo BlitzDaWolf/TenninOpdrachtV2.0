@@ -1,5 +1,9 @@
-﻿namespace Tennis.DAL.Models
+﻿using Tennis.DAL.Attributes;
+using Tennis.DTO.Read;
+
+namespace Tennis.DAL.Models
 {
+    [ReadDTO(typeof(GameResultReadDTO))]
     public class GameResult
     {
         public int Id { get; set; }

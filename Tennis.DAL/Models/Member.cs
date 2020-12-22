@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Tennis.DAL.Attributes;
 using Tennis.DAL.Models.Inteface;
+using Tennis.DTO.Read;
 
 namespace Tennis.DAL.Models
 {
+    [ReadDTO(typeof(MemberReadDTO))]
     public class Member : IIsDeleted
     {
         public int Id { get; set; }

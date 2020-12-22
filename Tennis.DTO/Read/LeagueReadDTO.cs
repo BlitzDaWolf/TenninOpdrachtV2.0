@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Tennis.DTO.Read
 {
-    public class RoleDTO
+    public class LeagueReadDTO
     {
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

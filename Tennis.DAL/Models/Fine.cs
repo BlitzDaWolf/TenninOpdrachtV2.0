@@ -1,7 +1,10 @@
 ﻿using System;
+using Tennis.DAL.Attributes;
+using Tennis.DTO.Read;
 
 namespace Tennis.DAL.Models
 {
+    [ReadDTO(typeof(FineReadDTO))]
     public class Fine
     {
         public int Id { get; set; }

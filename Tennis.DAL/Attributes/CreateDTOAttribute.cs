@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Tennis.DAL.Attributes
 {
+    [AttributeUsage(AttributeTargets.Class)]
     internal class CreateDTOAttribute : Attribute
     {
         public readonly Type ReadType;

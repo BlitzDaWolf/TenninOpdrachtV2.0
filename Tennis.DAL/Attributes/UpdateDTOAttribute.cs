@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Tennis.DAL.Attributes
 {
+    [AttributeUsage(AttributeTargets.Class)]
     internal class UpdateDTOAttribute : Attribute
     {
         public readonly Type ReadType;
@@ -16,7 +17,7 @@ namespace Tennis.DAL.Attributes
         public static UpdateDTOAttribute GetAttribute(Type t)
         {
             // Get instance of the attribute.
-            UpdateDTOAttribute MyAttribute = (UpdateDTOAttribute)Attribute.GetCustomAttribute(t, typeof(UpdateDTOAttribute));
+            UpdateDTOAttribute MyAttribute = (UpdateDTOAttribute)GetCustomAttribute(t, typeof(UpdateDTOAttribute));
             if (MyAttribute == null) return null;
             return MyAttribute;
         }

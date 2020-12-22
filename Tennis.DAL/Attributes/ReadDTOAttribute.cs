@@ -2,6 +2,7 @@
 
 namespace Tennis.DAL.Attributes
 {
+    [AttributeUsage(AttributeTargets.Class)]
     public class ReadDTOAttribute : Attribute
     {
         public readonly Type ReadType;

@@ -1,7 +1,10 @@
 ﻿using System;
+using Tennis.DAL.Attributes;
+using Tennis.DTO.Read;
 
 namespace Tennis.DAL.Models
 {
+    [ReadDTO(typeof(MemberRoleReadDTO))]
     public class MemberRole
     {
         public int Id { get; set; }
