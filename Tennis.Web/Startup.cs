@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Tennis.BLL;
 using Tennis.DAL;
 
 namespace Tennis.Web
@@ -31,6 +32,8 @@ namespace Tennis.Web
             string migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddContext(Configuration.GetConnectionString("conection"), migrationsAssembly);
             services.AddMapping();
+
+            services.AddServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

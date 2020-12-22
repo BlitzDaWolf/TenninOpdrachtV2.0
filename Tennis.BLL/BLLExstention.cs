@@ -7,8 +7,10 @@ namespace Tennis.BLL
 {
     public static class BLLExstention
     {
-        public static IServiceCollection AddServices(this IServiceCollection service, string conectionString, string migrationsAssembly)
+        public static IServiceCollection AddServices(this IServiceCollection service)
         {
+            service.AddScoped<UnitOfWork>();
+
             return service;
         }
     }
