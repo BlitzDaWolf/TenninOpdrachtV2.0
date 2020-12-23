@@ -13,5 +13,9 @@ namespace Tennis.App
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            ApiHelper.InitiliateClient();
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace Tennis.DTO.Read
 {
     public class MemberReadDTO : IDTO
     {
+        public int Id { get; set; }
         public string FederationNr { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

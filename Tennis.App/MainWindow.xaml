@@ -4,9 +4,46 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tennis.App"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <TabControl>
+            <TabItem Header="Member">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                <StackPanel x:Name="testPanel"></StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Game">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="GameT"></StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Game result">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="ResultT"></StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Member Role">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="RoleT"></StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

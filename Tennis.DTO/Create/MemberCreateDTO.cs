@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Tennis.DTO.Interface;
+using Tennis.DTO.Read;
 
 namespace Tennis.DTO.Create
 {
@@ -11,6 +12,7 @@ namespace Tennis.DTO.Create
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
+        [DropDown(typeof(GenderReadDTO), "Name", "Gender")]
         public int GenderId { get; set; }
         public string Address { get; set; }
         public string Number { get; set; }

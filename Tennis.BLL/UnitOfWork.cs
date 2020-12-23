@@ -8,7 +8,7 @@ using Tennis.DAL.Repository.Interface;
 
 namespace Tennis.BLL
 {
-    public class UnitOfWork
+    public class UnitOfWork : IDisposable
     {
         public readonly TennisContext context;
         public readonly IMapper mapper;
@@ -36,5 +36,20 @@ namespace Tennis.BLL
         public IMemberRepository MemberRepository => this.memberRepository ??= new MemberRepository(context, mapper);
         public IMemberRoleRepository MemberRoleRepository => this.memberRoleRepository ??= new MemberRoleRepository(context, mapper);
         public IRoleRepository RoleRepository => this.roleRepository ??= new RoleRepository(context, mapper);
+
+        public void Dispose()
+        {
+            if(context != null)
+            {
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                }
+                context.Dispose();
+            }
+        }
     }
 }

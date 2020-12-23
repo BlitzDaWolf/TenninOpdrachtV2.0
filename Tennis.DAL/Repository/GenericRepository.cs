@@ -41,7 +41,8 @@ namespace Tennis.DAL.Repository
         {
             if (createType == null) return;
             if (create.GetType() != createType) return;
-            dbSet.Add((TBase)mapper.Map(create, createType, typeof(TBase)));
+            TBase t = (TBase)mapper.Map(create, createType, typeof(TBase));
+            dbSet.Add(t);
         }
 
         public void Update(object update)

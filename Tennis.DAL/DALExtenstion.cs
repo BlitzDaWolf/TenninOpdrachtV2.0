@@ -64,7 +64,7 @@ namespace Tennis.DAL
                 IEnumerable<Type> typesWithHelpAttribute = DALExtenstion.GetTypes(assembly, typeof(UpdateDTOAttribute));
                 typesWithHelpAttribute.ToList().ForEach(x =>
                 {
-                    ReadDTOAttribute res = ReadDTOAttribute.GetAttribute(x);
+                    UpdateDTOAttribute res = UpdateDTOAttribute.GetAttribute(x);
                     CreateMap(x, res.ReadType).ReverseMap();
                 });
             }
@@ -73,7 +73,7 @@ namespace Tennis.DAL
                 IEnumerable<Type> typesWithHelpAttribute = DALExtenstion.GetTypes(assembly, typeof(CreateDTOAttribute));
                 typesWithHelpAttribute.ToList().ForEach(x =>
                 {
-                    ReadDTOAttribute res = ReadDTOAttribute.GetAttribute(x);
+                    CreateDTOAttribute res = CreateDTOAttribute.GetAttribute(x);
                     CreateMap(x, res.ReadType).ReverseMap();
                 });
             }
