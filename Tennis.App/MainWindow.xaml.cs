@@ -36,11 +36,11 @@ namespace Tennis.App
         {
             DataContext = this;
             InitializeComponent();
-            generic = new GenericCreate<MemberCreateDTO>(testPanel, test);
+            generic = new GenericCreate<MemberCreateDTO>(testPanel, test, 3, 5);
             generic.Done += Generic_Done;
-            gameGeneric = new GenericCreate<GameCreateDTO>(GameT, GameC);
-            resultGeneric = new GenericCreate<GameResultCreateDTO>(ResultT, ResultC);
-            RoleGeneric = new GenericCreate<MemberRoleCreateDTO>(RoleT, RoleC);
+            gameGeneric = new GenericCreate<GameCreateDTO>(GameT, GameC, 2, 3);
+            resultGeneric = new GenericCreate<GameResultCreateDTO>(ResultT, ResultC, 2, 3);
+            RoleGeneric = new GenericCreate<MemberRoleCreateDTO>(RoleT, RoleC, 2, 3);
 
         }
 

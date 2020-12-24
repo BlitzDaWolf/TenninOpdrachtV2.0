@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Tennis.DTO
+namespace Tennis.DTO.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class DropDownAttribute : Attribute

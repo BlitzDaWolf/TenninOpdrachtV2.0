@@ -14,7 +14,7 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                <StackPanel x:Name="testPanel"></StackPanel>
+                <Grid x:Name="testPanel"></Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Game">
@@ -23,7 +23,7 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <StackPanel x:Name="GameT"></StackPanel>
+                    <Grid x:Name="GameT"></Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Game result">
@@ -32,7 +32,7 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <StackPanel x:Name="ResultT"></StackPanel>
+                    <Grid x:Name="ResultT"></Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Member Role">
@@ -41,7 +41,7 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <StackPanel x:Name="RoleT"></StackPanel>
+                    <Grid x:Name="RoleT"></Grid>
                 </Grid>
             </TabItem>
         </TabControl>
