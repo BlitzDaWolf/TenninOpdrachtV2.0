@@ -13,6 +13,6 @@ namespace Tennis.DTO.Create
         public int MemberId { get; set; }
         [DropDown(typeof(LeagueReadDTO), "Name", "League")]
         public int LeagueId { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
     }
 }
