@@ -50,7 +50,22 @@ namespace Tennis.App.Api
                 if (response.IsSuccessStatusCode) { }
             }
         }
-    
+
+        public static async Task Remove<T>(int id, string Endpoint)
+        {
+            using (HttpResponseMessage response = await ApiHelper.apiClient.DeleteAsync($"{BASEURL}/{Endpoint}/{id}"))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+        }
+
         public static async Task<object> GetAll(string Endpoint, Type type)
         {
             using (HttpResponseMessage response = await ApiHelper.apiClient.GetAsync($"{BASEURL}/{Endpoint}"))

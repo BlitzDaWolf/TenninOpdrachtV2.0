@@ -9,44 +9,10 @@
     <Grid>
         <TabControl>
             <TabItem Header="Member">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="25" />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="1" Name="test2"></Grid>
-                    </Grid>
-                    <DataGrid Grid.Row="1" x:Name="memberList" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Member ID" Binding="{Binding Id}"/>
-                            <DataGridTextColumn Header="First name" Binding="{Binding FirstName}"/>
-                            <DataGridTextColumn Header="last name" Binding="{Binding LastName}"/>
-                            <DataGridTextColumn Header="Gender" Binding="{Binding Gender.Name}"/>
-                        </DataGrid.Columns>
-                        <DataGrid.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Edit"  Click="MenuItem_Click"/>
-                                <MenuItem Header="Remove" />
-                            </ContextMenu>
-                        </DataGrid.ContextMenu>
-                    </DataGrid>
-                <Grid Grid.Row="2" x:Name="testPanel"></Grid>
-                </Grid>
+                <Frame Source="MemberPage.xaml"/>
             </TabItem>
             <TabItem Header="Game">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid x:Name="GameT"></Grid>
-                </Grid>
+                <Frame Source="GamePage.xaml"/>
             </TabItem>
             <TabItem Header="Game result">
                 <Grid>

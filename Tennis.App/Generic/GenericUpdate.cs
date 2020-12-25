@@ -10,14 +10,17 @@ using Tennis.DTO.Attributes;
 
 namespace Tennis.App.Generic
 {
+    public delegate void Cancel();
+
     public class GenericUpdate<T> where T : class
     {
         public event Done Done;
+        public event Cancel Cancel;
 
         private int rows;
         private int cols;
         private Panel panel;
-        T o;
+        public T o;
 
         public GenericUpdate(Grid panel, T o, int rows = 3, int cols = 5)
         {
@@ -47,10 +50,10 @@ namespace Tennis.App.Generic
                 gr.ColumnDefinitions.Add(new ColumnDefinition());
             }
 
-            for (int i = 0; i < properties.Length; i++)
+            for (int i = 0; i < properties.Length - 1; i++)
             {
-                int row = i / (cols - skip);
-                int col = i % (cols - skip);
+                int row = i / (cols);
+                int col = i % (cols);
 
                 Grid g = new Grid();
                 gr.Children.Add(g);
@@ -60,8 +63,13 @@ namespace Tennis.App.Generic
                 g.SetValue(Grid.RowProperty, row);
                 g.SetValue(Grid.ColumnProperty, col);
 
-                var prop = properties[i];
+                var prop = properties[i + 1];
                 string name = prop.Name;
+                if (name == "Id")
+                {
+                    skip++;
+                    continue;
+                }
 
                 Label l = new Label();
 
@@ -95,16 +103,30 @@ namespace Tennis.App.Generic
                 g.Children.Add(l);
                 g.Children.Add(txtB);
             }
-            Button btn = new Button();
-            btn.HorizontalAlignment = HorizontalAlignment.Right;
-            btn.VerticalAlignment = VerticalAlignment.Bottom;
-
-            btn.Click += (sender, args) =>
             {
-                Done?.Invoke();
-            };
-            btn.Content = "Create";
-            panel.Children.Add(btn);
+                Button btn = new Button();
+                btn.HorizontalAlignment = HorizontalAlignment.Right;
+                btn.VerticalAlignment = VerticalAlignment.Bottom;
+
+                btn.Click += (sender, args) =>
+                {
+                    Done?.Invoke();
+                };
+                btn.Content = "Update";
+                panel.Children.Add(btn);
+            }
+            {
+                Button btn = new Button();
+                btn.HorizontalAlignment = HorizontalAlignment.Left;
+                btn.VerticalAlignment = VerticalAlignment.Bottom;
+
+                btn.Click += (sender, args) =>
+                {
+                    Cancel?.Invoke();
+                };
+                btn.Content = "Back";
+                panel.Children.Add(btn);
+            }
         }
 
         private void SetBinding(Control cont, string name, T o, DependencyProperty dependencyProperty)

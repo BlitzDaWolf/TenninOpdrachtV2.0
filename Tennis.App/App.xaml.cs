@@ -1,10 +1,13 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Tennis.DTO.Read;
+using Tennis.DTO.Update;
 
 namespace Tennis.App
 {
@@ -13,9 +16,27 @@ namespace Tennis.App
     /// </summary>
     public partial class App : Application
     {
+        public static IMapper Mapper { get; private set; }
+
         public App()
         {
             ApiHelper.InitiliateClient();
+
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new TennisMapper());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            App.Mapper = mapper;
+        }
+    }
+
+    public class TennisMapper : Profile
+    {
+        public TennisMapper()
+        {
+            CreateMap<MemberReadDTO, MemberUpdateDTO>().ReverseMap();
         }
     }
 }

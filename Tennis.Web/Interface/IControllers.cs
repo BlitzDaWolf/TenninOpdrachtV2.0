@@ -21,4 +21,9 @@ namespace Tennis.Web.Interface
     {
         public void Create(TCreate create);
     }
+
+    public interface IDeleteController<TID>
+    {
+        public void Delete(TID id);
+    }
 }

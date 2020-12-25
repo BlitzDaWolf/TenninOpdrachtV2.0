@@ -20,5 +20,8 @@ namespace Tennis.DTO.Read
         public string Zipcode { get; set; }
         public string City { get; set; }
         public string PhoneNr { get; set; }
+
+        public string FullAdress => $"{Address} {Number} {City}";
+        public string FullName => $"{FirstName} {LastName}";
     }
 }

@@ -18,7 +18,7 @@ namespace Tennis.BLL.Service
 
         public void Create(GameCreateDTO create)
         {
-            throw new NotImplementedException();
+            UnitOfWork.GameRepository.Create(create);
         }
 
         public void Delete(int id)
@@ -28,7 +28,7 @@ namespace Tennis.BLL.Service
 
         public List<GameReadDTO> GetAll()
         {
-            throw new NotImplementedException();
+            return UnitOfWork.GameRepository.GetAll();
         }
 
         public GameReadDTO GetById(int id)

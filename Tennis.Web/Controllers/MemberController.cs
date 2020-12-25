@@ -9,7 +9,7 @@ namespace Tennis.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MemberController : ControllerBase, IReadController<int>, IUpdateController<MemberUpdateDTO>, ICreateController<MemberCreateDTO>
+    public class MemberController : ControllerBase, IReadController<int>, IUpdateController<MemberUpdateDTO>, ICreateController<MemberCreateDTO>, IDeleteController<int>
     {
         IMemberService Service;
 
@@ -40,6 +40,12 @@ namespace Tennis.Web.Controllers
         public void Update(MemberUpdateDTO update)
         {
             Service.Update(update);
+        }
+
+        [HttpDelete("{id:int}")]
+        public void Delete(int id)
+        {
+            Service.Delete(id);
         }
     }
 }

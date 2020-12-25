@@ -9,30 +9,36 @@
       Title="MemberPage">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <DataGrid x:Name="memberList">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="FederationNr" Binding="{Binding FederationNr}"/>
-                <DataGridTextColumn Header="FirstName" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="LastName" Binding="{Binding LastName}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="25" />
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <TextBox Margin="10"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" Name="test2"></Grid>
+            </Grid>
+            <DataGrid Grid.Row="1" x:Name="memberList" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Federation number" Binding="{Binding FederationNr}"/>
+                    <DataGridTextColumn Header="First name" Binding="{Binding FirstName}"/>
+                    <DataGridTextColumn Header="last name" Binding="{Binding LastName}"/>
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender.Name}"/>
+                    <DataGridTextColumn Header="Addres" Binding="{Binding FullAdress}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Edit" Click="UpdateUser" />
+                        <MenuItem Header="Remove" Click="RemoveUser" />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+            <Grid Grid.Row="2" x:Name="testPanel"></Grid>
+            <Grid Visibility="Hidden" Grid.Row="2" x:Name="updateMember"></Grid>
         </Grid>
     </Grid>
 </Page>

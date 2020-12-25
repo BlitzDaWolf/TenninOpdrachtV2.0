@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Tennis.DAL.Attributes
 {
@@ -6,8 +7,9 @@ namespace Tennis.DAL.Attributes
     public class ReadDTOAttribute : Attribute
     {
         public readonly Type ReadType;
+        public override object TypeId => base.TypeId;
 
-        public ReadDTOAttribute(Type readType)
+        public ReadDTOAttribute(Type readType, [CallerMemberName] string propertyName = null)
         {
             this.ReadType = readType;
         }
