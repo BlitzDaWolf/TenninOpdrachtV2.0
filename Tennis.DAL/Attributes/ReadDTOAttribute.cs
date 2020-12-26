@@ -9,7 +9,7 @@ namespace Tennis.DAL.Attributes
         public readonly Type ReadType;
         public override object TypeId => base.TypeId;
 
-        public ReadDTOAttribute(Type readType, [CallerMemberName] string propertyName = null)
+        public ReadDTOAttribute(Type readType)
         {
             this.ReadType = readType;
         }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Tennis.BLL.Interface;
-using Tennis.DAL.Repository.Interface;
 using Tennis.DTO.Read;
 
 namespace Tennis.BLL.Service

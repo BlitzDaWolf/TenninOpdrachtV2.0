@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Tennis.DAL.Context;
 using Tennis.DAL.Repository;
 using Tennis.DAL.Repository.Interface;
@@ -39,15 +37,13 @@ namespace Tennis.BLL
 
         public void Dispose()
         {
-            if(context != null)
+            if (context != null)
             {
                 try
                 {
                     context.SaveChanges();
                 }
-                catch (Exception e)
-                {
-                }
+                catch { }
                 context.Dispose();
             }
         }

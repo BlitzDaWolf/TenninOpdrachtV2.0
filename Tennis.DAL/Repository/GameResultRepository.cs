@@ -1,8 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Tennis.DAL.Models;
 using Tennis.DAL.Repository.Interface;
 using Tennis.DTO.Read;

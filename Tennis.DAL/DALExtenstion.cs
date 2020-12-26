@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using Tennis.DAL.Attributes;
 using Tennis.DAL.Context;
 
@@ -15,7 +14,8 @@ namespace Tennis.DAL
     {
         public static IServiceCollection AddContext(this IServiceCollection service, string conectionString, string migrationsAssembly)
         {
-            service.AddDbContext<TennisContext>(opt => {
+            service.AddDbContext<TennisContext>(opt =>
+            {
                 opt.UseSqlServer(conectionString, b => b.MigrationsAssembly(migrationsAssembly));
             });
 

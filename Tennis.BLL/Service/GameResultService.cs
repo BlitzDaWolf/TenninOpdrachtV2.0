@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Tennis.BLL.Interface;
-using Tennis.DAL.Models;
 using Tennis.DTO.Create;
 using Tennis.DTO.Read;
 

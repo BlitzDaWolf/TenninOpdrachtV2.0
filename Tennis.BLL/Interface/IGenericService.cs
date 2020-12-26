@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Tennis.DTO;
-using Tennis.DTO.Interface;
+﻿using System.Collections.Generic;
 
 namespace Tennis.BLL.Interface
 {

@@ -8,7 +8,7 @@ using Tennis.DAL.Repository.Interface;
 
 namespace Tennis.DAL.Repository
 {
-    public class GenericRepository <TBase, TReturn> : IGenericRepository<TBase, TReturn> where TBase : class
+    public class GenericRepository<TBase, TReturn> : IGenericRepository<TBase, TReturn> where TBase : class
     {
         private readonly DbContext context;
         private readonly IMapper mapper;
@@ -51,7 +51,7 @@ namespace Tennis.DAL.Repository
             if (update.GetType() != updateType) return;
             dbSet.Update((TBase)mapper.Map(update, updateType, typeof(TBase)));
         }
-        
+
         public TReturn GetById(object id)
         {
             // if (readType == null) return null;

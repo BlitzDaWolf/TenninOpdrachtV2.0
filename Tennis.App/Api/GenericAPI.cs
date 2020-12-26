@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace Tennis.App.Api
 {
-    public class GenericAPI {
+    public class GenericAPI
+    {
 
         public const string BASEURL = "https://localhost:5001/api";
 
@@ -72,7 +73,7 @@ namespace Tennis.App.Api
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    var  t = typeof(List<>).MakeGenericType(type);
+                    var t = typeof(List<>).MakeGenericType(type);
                     var res = await response.Content.ReadAsAsync(t);
                     return res;
                 }

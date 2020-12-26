@@ -50,7 +50,7 @@ namespace Tennis.App.Generic
 
             for (int i = 0; i < properties.Length; i++)
             {
-                int row = i  / cols;
+                int row = i / cols;
                 int col = i % cols;
 
                 Grid g = new Grid();

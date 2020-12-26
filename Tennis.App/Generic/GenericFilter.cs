@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using System.Windows.Controls;
-using Tennis.DTO.Attributes;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
+using Tennis.DTO.Attributes;
 
 namespace Tennis.App.Generic
 {
@@ -41,7 +41,7 @@ namespace Tennis.App.Generic
                 string name = prop.Name;
 
                 FilterAttribute attribute = FilterAttribute.GetAttribute(prop);
-                if (attribute  == null) continue;
+                if (attribute == null) continue;
 
                 Label l = new Label();
                 l.Content = prop.Name;

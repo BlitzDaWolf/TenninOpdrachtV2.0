@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Tennis.DTO.Attributes;
 using Tennis.DTO.Read;
 
