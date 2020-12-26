@@ -9,7 +9,7 @@ Add members add matches.
 ## Requirements
 * Dotnet 5
 * mssql
-* Windows
+* Windows (for the WPF application)
 
 ## Installation
 

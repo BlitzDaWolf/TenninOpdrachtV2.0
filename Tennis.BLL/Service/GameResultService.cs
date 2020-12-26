@@ -19,6 +19,7 @@ namespace Tennis.BLL.Service
         public void Create(GameResultCreateDTO create)
         {
             UnitOfWork.GameResultRepository.Create(create);
+            UnitOfWork.context.SaveChanges();
         }
 
         public void Delete(int id)

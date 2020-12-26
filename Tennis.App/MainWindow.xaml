@@ -9,28 +9,10 @@
     <Grid>
         <TabControl>
             <TabItem Header="Member">
-                <Frame Source="MemberPage.xaml"/>
+                <Frame Source="MemberTab.xaml"/>
             </TabItem>
             <TabItem Header="Game">
                 <Frame Source="GamePage.xaml"/>
-            </TabItem>
-            <TabItem Header="Game result">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid x:Name="ResultT"></Grid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Member Role">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid x:Name="RoleT"></Grid>
-                </Grid>
             </TabItem>
         </TabControl>
     </Grid>

@@ -8,7 +8,6 @@ namespace Tennis.DTO.Create
 {
     public class MemberRoleCreateDTO
     {
-        public int Id { get; set; }
         [DropDown(typeof(RoleReadDTO), "Name", "Role")]
         public int RoleId { get; set; }
         [DropDown(typeof(MemberReadDTO), "FirstName", "Member")]

@@ -11,16 +11,47 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <DataGrid x:Name="gameList" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" AutoGenerateColumns="False">
+        <Grid>
+            <Button Width="150" HorizontalAlignment="Left" Content="Back" Margin="2" Click="Back"/>
+        </Grid>
+        <DataGrid Grid.Row="1" x:Name="gameList" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Game number" Binding="{Binding GameNumber}"/>
                 <DataGridTextColumn Header="Member" Binding="{Binding Member.FullName}"/>
                 <DataGridTextColumn Header="League" Binding="{Binding League.Name}"/>
             </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Results" Click="ResultClick"/>
+                    <MenuItem Header="Remove" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
         </DataGrid>
-        <Grid Name="GameCreate" Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid Name="GameCreate" Visibility="Visible"/>
+            <Grid x:Name="Result" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <DataGrid Name="resultList" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Team member" Binding="{Binding SetNr}"/>
+                        <DataGridTextColumn Header="Team member" Binding="{Binding ScoreTeamMember}"/>
+                        <DataGridTextColumn Header="Opponent" Binding="{Binding ScoreOpponent}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Remove" />
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+                <Grid Grid.Column="1" Name="resultCreate"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
