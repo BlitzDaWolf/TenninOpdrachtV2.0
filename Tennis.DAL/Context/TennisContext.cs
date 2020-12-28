@@ -14,7 +14,7 @@ namespace Tennis.DAL.Context
         public DbSet<Gender> Genders { get; set; }
         public DbSet<League> Leagues { get; set; }
         public DbSet<Member> Members { get; set; }
-        public DbSet<MemberRole> memberRoles { get; set; }
+        public DbSet<MemberRole> MemberRoles { get; set; }
         public DbSet<Role> Roles { get; set; }
 
         public TennisContext() : base() { }

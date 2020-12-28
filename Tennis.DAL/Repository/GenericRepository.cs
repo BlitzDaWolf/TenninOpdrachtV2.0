@@ -28,7 +28,7 @@ namespace Tennis.DAL.Repository
             createType = CreateDTOAttribute.GetAttribute(typeof(TBase))?.ReadType;
         }
 
-        public List<TReturn> GetAll()
+        public virtual List<TReturn> GetAll()
         {
             if (readType == null) return null;
             if (readType != typeof(TReturn)) return null;
@@ -49,6 +49,7 @@ namespace Tennis.DAL.Repository
         {
             if (updateType == null) return;
             if (update.GetType() != updateType) return;
+
             dbSet.Update((TBase)mapper.Map(update, updateType, typeof(TBase)));
         }
 

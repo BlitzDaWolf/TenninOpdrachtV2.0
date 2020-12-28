@@ -12,8 +12,12 @@ namespace Tennis.DAL
 {
     public static class DALExtenstion
     {
+        public static string CONNECTIONSTRING { get; private set; } = "";
+
         public static IServiceCollection AddContext(this IServiceCollection service, string conectionString, string migrationsAssembly)
         {
+            CONNECTIONSTRING = conectionString;
+
             service.AddDbContext<TennisContext>(opt =>
             {
                 opt.UseSqlServer(conectionString, b => b.MigrationsAssembly(migrationsAssembly));
